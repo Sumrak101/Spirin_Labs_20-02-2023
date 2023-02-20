@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">lab3</a> &gt; <a href="index.source.html" class="el_package">org.example</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">package org.example;
+
+import java.util.Scanner;
+
+<span class="nc" id="L5">public class Main {</span>
+    public static void main(String[] args) {
+<span class="nc" id="L7">        zadacha2();</span>
+<span class="nc" id="L8">    }</span>
+
+    public static void zadacha1() {
+<span class="nc" id="L11">        Scanner in = new Scanner(System.in);</span>
+<span class="nc" id="L12">        int earings = 0;</span>
+<span class="nc" id="L13">        int spendings = 0;</span>
+
+        while (true) {
+<span class="nc" id="L16">            System.out.println(&quot;РЎРїРёСЃРѕРє РѕРїРµСЂР°С†РёР№:&quot;);</span>
+<span class="nc" id="L17">            System.out.println(&quot;1.Р’РІРµСЃС‚Рё СЃСѓРјРјСѓ РґРѕС…РѕРґРѕРІ&quot;);</span>
+<span class="nc" id="L18">            System.out.println(&quot;2.Р’РІРµСЃС‚Рё СЃСѓРјРјСѓ СЂР°СЃС…РѕРґРѕРІ&quot;);</span>
+<span class="nc" id="L19">            System.out.println(&quot;3.Р’С‹Р±СЂР°С‚СЊ СЃРёСЃС‚РµРјСѓ РЅР°Р»РѕРіРѕРѕР±Р»Р°Р¶РµРЅРёСЏ&quot;);</span>
+<span class="nc" id="L20">            System.out.println(&quot;Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РѕРїРµСЂР°С†РёРё&quot;);</span>
+<span class="nc" id="L21">            String input = in.nextLine();</span>
+
+<span class="nc bnc" id="L23" title="All 2 branches missed.">            if (&quot;end&quot;.equals(input)) {</span>
+<span class="nc" id="L24">                System.out.println(&quot;РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°&quot;);</span>
+<span class="nc" id="L25">                break;</span>
+            }
+
+<span class="nc" id="L28">            int operation = Integer.parseInt(input);</span>
+<span class="nc bnc" id="L29" title="All 4 branches missed.">            switch (operation) {</span>
+                case 1:
+<span class="nc" id="L31">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ РґРѕС…РѕРґР°: &quot;);</span>
+<span class="nc" id="L32">                    String moneystr = in.nextLine();</span>
+<span class="nc" id="L33">                    int money = Integer.parseInt(moneystr);</span>
+
+<span class="nc" id="L35">                    earings += money;</span>
+<span class="nc" id="L36">                    System.out.println(&quot;Р”РѕС…РѕРґС‹: &quot; + earings);</span>
+<span class="nc" id="L37">                    break;</span>
+                case 2:
+<span class="nc" id="L39">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ СЃСѓРјРјСѓ СЂР°СЃС…РѕРґРѕРІ: &quot;);</span>
+<span class="nc" id="L40">                    String spenstr = in.nextLine();</span>
+<span class="nc" id="L41">                    int spen = Integer.parseInt(spenstr);</span>
+<span class="nc" id="L42">                    spendings += spen;</span>
+<span class="nc" id="L43">                    System.out.println(&quot;Р Р°СЃС…РѕРґС‹: &quot; + spendings);</span>
+<span class="nc" id="L44">                    break;</span>
+                case 3:
+//                    double USN = earings * 0.06;
+<span class="nc" id="L47">                    System.out.println(&quot;РќР°Р»РѕРі РЈРЎРќ РґРѕС…РѕРґС‹: &quot; + USN(earings));</span>
+//                    double USN2 = (earings - spendings) * 0.15;
+<span class="nc" id="L49">                    System.out.println(&quot;РќР°Р»РѕРі РЈРЎРќ РґРѕС…РѕРґС‹-СЂР°СЃС…РѕРґС‹: &quot; + USN2(earings,spendings));</span>
+
+<span class="nc bnc" id="L51" title="All 2 branches missed.">                    if (USN(earings)&lt;USN2(earings,spendings)){</span>
+<span class="nc" id="L52">                        System.out.println(&quot;РЎРёСЃС‚РµРјР° РЈРЎРќ РґРѕС…РѕРґС‹ РІС‹РіРѕРґРЅРµРµ&quot;);</span>
+<span class="nc" id="L53">                        System.out.println(&quot;Р­РєРѕРЅРѕРјРёСЏ: &quot; + (USN2(earings,spendings) - USN(earings)));</span>
+<span class="nc" id="L54">                        break;</span>
+                    }
+                    else {
+
+<span class="nc" id="L58">                        System.out.println(&quot;РЎРёСЃС‚РµРјР° РЈРЎРќ РґРѕС…РѕРґС‹-СЂР°СЃС…РѕРґС‹ РІС‹РіРѕРґРЅРµРµ&quot;);</span>
+<span class="nc" id="L59">                        System.out.println(&quot;Р­РєРѕРЅРѕРјРёСЏ: &quot; + (USN(earings) - USN2(earings,spendings)));</span>
+                        break;
+                    }
+
+//                    if (USN &lt; USN2) {
+//                        System.out.println(&quot;РЎРёСЃС‚РµРјР° РЈРЎРќ РґРѕС…РѕРґС‹ РІС‹РіРѕРґРЅРµРµ&quot;);
+//                        System.out.println(&quot;Р­РєРѕРЅРѕРјРёСЏ: &quot; + (USN2 - USN));
+//                        break;
+//                    } else {
+//                        System.out.println(&quot;РЎРёСЃС‚РµРјР° РЈРЎРќ РґРѕС…РѕРґС‹-СЂР°СЃС…РѕРґС‹ РІС‹РіРѕРґРЅРµРµ&quot;);
+//                        System.out.println(&quot;Р­РєРѕРЅРѕРјРёСЏ: &quot; + (USN - USN2));
+//                        break;
+//                    }
+            }
+<span class="nc" id="L73">        }</span>
+
+
+<span class="nc" id="L76">    }</span>
+    public static int USN2(int earings, int spendings){
+<span class="nc" id="L78">        int USN2 = (int) ((earings - spendings) * 0.15);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">        if (USN2&gt;=0){</span>
+
+<span class="nc" id="L81">            return USN2;</span>
+
+        }else{
+<span class="nc" id="L84">            return 0;</span>
+        }
+    }
+    public static int USN(int earings){
+<span class="nc" id="L88">        int USN = (int) (earings * 0.06);</span>
+<span class="nc bnc" id="L89" title="All 2 branches missed.">        if (USN&gt;=0){</span>
+
+<span class="nc" id="L91">            return USN;</span>
+        }else{
+<span class="nc" id="L93">            return 0;</span>
+        }
+    }
+
+    public static void zadacha2(){
+
+<span class="nc" id="L99">        Scanner in = new Scanner(System.in);</span>
+
+
+        while (true) {
+<span class="nc" id="L103">            System.out.println(&quot;РЎРїРёСЃРѕРє РѕРїРµСЂР°С†РёР№:&quot;);</span>
+<span class="nc" id="L104">            System.out.println(&quot;1.РЎСЂР°РІРЅРёС‚СЊ&quot;);</span>
+<span class="nc" id="L105">            System.out.println(&quot;2.РћРєСЂСѓРіР»РёС‚СЊ&quot;);</span>
+<span class="nc" id="L106">            System.out.println(&quot;3.РћС‚Р±СЂРѕСЃРёС‚СЊ РґСЂРѕР±РЅСѓСЋ С‡Р°СЃС‚СЊ&quot;);</span>
+<span class="nc" id="L107">            System.out.println(&quot;Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РѕРїРµСЂР°С†РёРё&quot;);</span>
+<span class="nc" id="L108">            String input = in.nextLine();</span>
+<span class="nc" id="L109">            int operation = Integer.parseInt(input);</span>
+<span class="nc bnc" id="L110" title="All 2 branches missed.">            if (&quot;end&quot;.equals(input)) {</span>
+<span class="nc" id="L111">                System.out.println(&quot;РџСЂРѕРіСЂР°РјРјР° Р·Р°РІРµСЂС€РµРЅР°&quot;);</span>
+<span class="nc" id="L112">                break;</span>
+            }
+
+<span class="nc bnc" id="L115" title="All 4 branches missed.">            switch (operation){</span>
+                case 1:
+<span class="nc" id="L117">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L118">                    String first1str = in.nextLine();</span>
+<span class="nc" id="L119">                    double first1 = Double.parseDouble(first1str);</span>
+<span class="nc" id="L120">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L121">                    String second1str = in.nextLine();</span>
+<span class="nc" id="L122">                    float second1 = Float.parseFloat(second1str);</span>
+<span class="nc bnc" id="L123" title="All 2 branches missed.">                    if (first1==second1) {</span>
+<span class="nc" id="L124">                        System.out.println(&quot;Р§РёСЃР»Р° СЂР°РІРЅС‹&quot;);</span>
+<span class="nc" id="L125">                        break;</span>
+                    }else{
+<span class="nc" id="L127">                        System.out.println(&quot;Р§РёСЃР»Р° РЅРµ СЂР°РІРЅС‹&quot;);</span>
+<span class="nc" id="L128">                        break;</span>
+                    }
+                case 2:
+<span class="nc" id="L131">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L132">                    String first2str = in.nextLine();</span>
+<span class="nc" id="L133">                    double first2 = Double.parseDouble(first2str);</span>
+<span class="nc" id="L134">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L135">                    String second2str = in.nextLine();</span>
+<span class="nc" id="L136">                    float second2 = Float.parseFloat(second2str);</span>
+<span class="nc" id="L137">                    System.out.println(&quot;РћРєСЂСѓРіР»РµРЅРёРµ:&quot;);</span>
+<span class="nc" id="L138">                    System.out.println(&quot;1)&quot;+Math.round(first2)+&quot; 2)&quot;+Math.round(second2));</span>
+<span class="nc" id="L139">                    break;</span>
+                case 3:
+<span class="nc" id="L141">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РїРµСЂРІРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L142">                    String first3str = in.nextLine();</span>
+<span class="nc" id="L143">                    double first3 = Double.parseDouble(first3str);</span>
+<span class="nc" id="L144">                    System.out.println(&quot;Р’РІРµРґРёС‚Рµ РІС‚РѕСЂРѕРµ С‡РёСЃР»Рѕ:&quot;);</span>
+<span class="nc" id="L145">                    String second3str = in.nextLine();</span>
+<span class="nc" id="L146">                    float second3 = Float.parseFloat(second3str);</span>
+<span class="nc" id="L147">                    System.out.println(&quot;РћС‚Р±СЂРѕСЃРёР» РґСЂРѕР±РЅСѓСЋ С‡Р°СЃС‚СЊ&quot;);</span>
+<span class="nc" id="L148">                    long firs = (long)first3;</span>
+<span class="nc" id="L149">                    long secon = (long)second3;</span>
+<span class="nc" id="L150">                    System.out.println(firs+&quot; &quot;+secon);</span>
+                    break;
+            }
+<span class="nc" id="L153">        }</span>
+<span class="nc" id="L154">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
